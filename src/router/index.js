@@ -15,6 +15,11 @@ const routes = [
     path: "/products/new",
     name: "newProduct",
     component: Product
+  },
+  {
+    path: "/products/:id",
+    name: "editProduct",
+    component: Product
   }
 ];
 

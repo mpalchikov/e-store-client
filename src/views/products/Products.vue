@@ -9,7 +9,14 @@
           :items="products"
           :items-per-page="5"
           class="elevation-1"
-        ></v-data-table>
+        >
+          <!-- eslint-disable vue/valid-v-slot -->
+          <template v-slot:item.title="{ item }">
+            <router-link :to="{ name: 'editProduct', params: { id: item.id } }">
+              {{ item.title }}
+            </router-link>
+          </template>
+        </v-data-table>
       </v-col>
     </v-row>
   </v-layout>
